@@ -747,6 +747,14 @@ ul {
     gap: 15px;
 }
 
+.contact-social .social-links a {
+    color: var(--color-text);
+    transition: var(--transition);
+}
+.contact-social .social-links a:hover {
+    color: var(--color-primary);
+}
+
 .social-link {
     display: flex;
     align-items: center;

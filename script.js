@@ -1,30 +1,21 @@
-/* ==========================================
-   JAITI NGO - Clean JavaScript
-   ========================================== */
-
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* ===============================
-       MOBILE NAVIGATION TOGGLE
-    =============================== */
-
+    // Mobile menu toggle
     const mobileBtn = document.querySelector(".mobile-menu-btn");
     const navLinks = document.querySelector(".nav-links");
 
     if (mobileBtn && navLinks) {
         mobileBtn.addEventListener("click", function () {
             navLinks.classList.toggle("active");
+            const isExpanded = navLinks.classList.contains("active");
+            mobileBtn.setAttribute("aria-expanded", isExpanded);
         });
     }
 
-    /* ===============================
-       HERO IMAGE SLIDER
-    =============================== */
-
+    // Hero slider
     const slides = document.querySelectorAll(".slide");
-    let currentSlide = 0;
-
-    if (slides.length > 0) {
+    if (slides.length > 1) {           // only run if more than 1 slide
+        let currentSlide = 0;
 
         function showNextSlide() {
             slides[currentSlide].classList.remove("active");
@@ -32,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
             slides[currentSlide].classList.add("active");
         }
 
-        setInterval(showNextSlide, 5000);
+        setInterval(showNextSlide, 5500); // slightly slower transition feels more calm
     }
-
 });

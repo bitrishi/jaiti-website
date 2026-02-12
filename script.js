@@ -14,12 +14,10 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenuBtn.addEventListener('click', function() {
             navLinks.classList.toggle('active');
             
-            // Animate hamburger to X
             const spans = this.querySelectorAll('span');
             spans.forEach(span => span.classList.toggle('active'));
         });
         
-        // Close menu when clicking a link
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function() {
                 navLinks.classList.remove('active');
@@ -41,6 +39,22 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // ==========================================
+    // HERO IMAGE SLIDER (NEW)
+    // ==========================================
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    if (slides.length > 0) {
+        function showNextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(showNextSlide, 6000);
+    }
     
     // ==========================================
     // Gallery Lightbox
@@ -57,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
         let currentIndex = 0;
         const images = [];
         
-        // Collect all gallery images
         galleryItems.forEach((item, index) => {
             const img = item.querySelector('img');
             if (img) {
@@ -99,19 +112,16 @@ document.addEventListener('DOMContentLoaded', function() {
             lightboxImage.alt = images[currentIndex].alt;
         }
         
-        // Event listeners
         lightboxClose.addEventListener('click', closeLightbox);
         lightboxPrev.addEventListener('click', showPrevImage);
         lightboxNext.addEventListener('click', showNextImage);
         
-        // Close on background click
         lightbox.addEventListener('click', function(e) {
             if (e.target === lightbox) {
                 closeLightbox();
             }
         });
         
-        // Keyboard navigation
         document.addEventListener('keydown', function(e) {
             if (!lightbox.classList.contains('active')) return;
             
@@ -157,7 +167,6 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', function(e) {
             const submitBtn = this.querySelector('button[type="submit"]');
             
-            // Simple validation check
             const requiredFields = this.querySelectorAll('[required]');
             let isValid = true;
             
@@ -171,7 +180,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             
             if (isValid) {
-                // Show loading state
                 submitBtn.textContent = 'Sending...';
                 submitBtn.disabled = true;
             } else {
@@ -179,7 +187,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Clear error styling on input
         contactForm.querySelectorAll('input, select, textarea').forEach(field => {
             field.addEventListener('input', function() {
                 this.style.borderColor = '';
@@ -205,7 +212,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
     
-    // Animate elements on scroll
     const animateElements = document.querySelectorAll('.service-card, .mv-card, .value-item, .help-card, .gallery-item');
     
     animateElements.forEach(el => {

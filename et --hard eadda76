@@ -1,0 +1,42 @@
+[33m1ac5059[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Clean hero slider architecture and fixed CSS conflict
+[33meadda76[m Renamed hero slider images photo1 and photo3
+[33m04d625d[m Updated script.js with hero slider integration
+[33mf846dbd[m Updated CSS styling improvements
+[33m390cdbd[m Updated homepage structure with Why Jaiti section
+[33ma0afe7a[m Improved mobile responsiveness
+[33mbaefd07[m Updated impact year to 2024
+[33m709eb32[m Homepage upgraded...
+[33mfd666c5[m Homepage upgraded...
+[33mcad1ac3[m Fix: Facebook SVG use currentColor for consistent icon styling
+[33m66fa0c0[m Update Mission text on About and Home pages
+[33m0c53e35[m Update About page Vision text
+[33m8d9c789[m Use official Facebook 'f' SVG icon in footer social links
+[33m61e17cb[m Update Facebook links to provided profile URL
+[33m5694306[m Add Facebook link to footer social links
+[33m5155650[m Merge branch-satya: update Jaiti -> Jaiti Foundation
+[33m48f5314[m[33m ([m[1;31morigin/branch-satya[m[33m, [m[1;32mbranch-satya[m[33m)[m Update footer: Jaiti -> Jaiti Foundation
+[33m4446431[m Update contact: Jaiti -> Jaiti Foundation
+[33m7b91e97[m Merge pull request #2 from bitrishi/pr/save-site-changes-e4db0c3
+[33m8d5913e[m[33m ([m[1;31morigin/pr/save-site-changes-e4db0c3[m[33m, [m[1;32mpr/save-site-changes-e4db0c3[m[33m)[m Update about.html
+[33me4db0c3[m Save site changes
+[33m965800e[m contact us fix
+[33mf67a085[m contact us fix
+[33m580c29a[m contact us fix
+[33mb166c8c[m contact us fix
+[33mf96bc77[m contact us fix
+[33mb9301c1[m contact us fix
+[33m0f1e2c3[m contact us fix
+[33m105cb32[m contact us fix
+[33mc8365bf[m contact us fix
+[33m7151251[m contact us fix
+[33m0c5a524[m contact us fix
+[33m25bc4be[m contact us fix
+[33mdc9069f[m Fix: ensure social links visible in contact section (CSS)
+[33me1d4e34[m Fix: add LinkedIn & Instagram links in contact section and footer
+[33m4f887b8[m social-links
+[33mf3a8fb5[m social-links
+[33mc21e47d[m social-links
+[33me1fbe87[m Create CNAME
+[33m16daeb7[m social-links
+[33mbfcaf24[m photos
+[33m8d73d24[m first page

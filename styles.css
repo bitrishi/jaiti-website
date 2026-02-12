@@ -1047,3 +1047,70 @@ ul {
         padding: 12px 24px;
     }
 }
+/* ========================= */
+/* MOBILE FRIENDLY ADJUSTMENT */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        text-align: center;
+        padding: 14px;
+    }
+
+    .services-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .service-card {
+        padding: 20px;
+    }
+
+    .impact-photo {
+        width: 100%;
+        height: auto;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}

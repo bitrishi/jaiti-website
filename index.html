@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
+
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XDSW3Y66RZ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -9,224 +10,105 @@
       gtag('js', new Date());
       gtag('config', 'G-XDSW3Y66RZ');
     </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Jaiti Foundation | Free Education for Underprivileged Children</title>
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Jaiti Foundation provides completely free education and school support to underprivileged slum children in Jaipur, India. 60+ children currently studying with love and care.">
-    <meta name="keywords" content="Jaiti Foundation, NGO Jaipur, free education India, slum children education, charity Jaipur, education NGO India">
-    <meta name="author" content="Jaiti Foundation">
-    <!-- Open Graph -->
-    <meta property="og:title" content="Jaiti Foundation - Education, Not Poverty.">
-    <meta property="og:description" content="60+ children currently studying. 150+ children impacted since 2024. Every rupee changes a life.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jaiti.in">
-    <meta property="og:image" content="https://jaiti.in/images/logo.jpg">
-    <link rel="canonical" href="https://jaiti.in">
+
+    <meta name="description" content="Jaiti Foundation provides completely free education and school support to underprivileged children in Jaipur, India.">
+
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
-<!-- Navigation (unchanged) -->
+<!-- ================= NAVIGATION ================= -->
 <nav class="navbar">
     <div class="container nav-container">
+
         <a href="index.html" class="logo">
-            <img src="images/logo.jpg" alt="Jaiti Foundation" class="logo-img">
+            <img src="images/logo.jpg" alt="Jaiti Foundation Logo">
             <span>Jaiti Foundation</span>
         </a>
-        <button class="mobile-menu-btn" aria-label="Toggle menu">
+
+        <button class="mobile-menu-btn">
             <span></span>
             <span></span>
             <span></span>
         </button>
+
         <ul class="nav-links">
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
+
     </div>
 </nav>
 
-<!-- Hero Section – made more emotional + added donate button -->
-<section class="hero">
-    <div class="container hero-content">
-        <h1>Education, Not Poverty.<br><small style="font-size:0.65em; opacity:0.9;">Let’s Be Kind to Their Future</small></h1>
-        <p class="hero-subtitle">
-            In Jaipur’s slums, bright children lose school because of money.<br>
-            Jaiti Foundation says no — we give 100% free education, books, fees, love & guidance.<br>
-            <strong>60+ children are studying with us today.</strong> Help us reach 200+ next year.
+
+<!-- ================= HERO SLIDER ================= -->
+<section class="hero-slider">
+
+    <div class="slide active" style="background-image: url('images/photo1.jpg');"></div>
+    <div class="slide" style="background-image: url('images/photo2.jpg');"></div>
+    <div class="slide" style="background-image: url('images/photo3.jpg');"></div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h1>Every Child Deserves a Future.</h1>
+        <p>
+            60+ children are currently studying with us.<br>
+            150+ lives impacted since 2024.<br>
+            Education is not charity — it is a right.
         </p>
-        <div class="hero-stats">
-            <div class="stat">
-                <span class="stat-number">60+</span>
-                <span class="stat-label">Currently Studying</span>
-            </div>
-            <div class="stat">
-                <span class="stat-number">150+</span>
-                <span class="stat-label">Children Impacted Since 2024</span>
-            </div>
-            <div class="stat">
-                <span class="stat-number">100%</span>
-                <span class="stat-label">Free Education</span>
-            </div>
-        </div>
-        <div style="margin: 30px 0;">
-            <a href="contact.html" class="btn btn-primary" style="font-size:1.2rem; padding:16px 40px;">Support a Child Today</a>
-            <a href="#supporters" class="btn btn-secondary" style="margin-left:15px;">See Our Supporters</a>
-        </div>
+        <a href="contact.html" class="btn">Support a Child</a>
     </div>
+
 </section>
 
-<!-- Why Jaiti Exists (unchanged – already good) -->
-<section class="why-jaiti">
-    <div class="container">
+
+<!-- ================= WHY SECTION ================= -->
+<section class="section">
+    <div class="container text-center">
         <h2>Why Jaiti Exists</h2>
-        <p>In many underserved communities, children leave school not because they lack ability, but because poverty limits their opportunities...</p>
-        <p>Jaiti Foundation was started to ensure that financial hardship does not decide a child’s future...</p>
-    </div>
-</section>
-
-<!-- Mission Section (unchanged) -->
-<section class="mission">
-    <div class="container">
-        <h2>Our Mission</h2>
-        <p class="mission-text">To provide consistent academic support, school funding, and mentorship so that every child we work with can stay in school, grow with confidence, and build a better future.</p>
-    </div>
-</section>
-
-<!-- What We Do + added CTA after it -->
-<section class="what-we-do">
-    <div class="container">
-        <h2>What We Do</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">📚</div>
-                <h3>Free Tutoring</h3>
-                <p>Daily academic support to help children succeed in school and build confidence.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🎓</div>
-                <h3>School Funding</h3>
-                <p>We cover school fees, books, uniforms, and essential supplies.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🤝</div>
-                <h3>Mentorship</h3>
-                <p>Guidance and emotional support to help children stay motivated and focused.</p>
-            </div>
-        </div>
-
-        <!-- Added repeated CTA like Aapni Pathshala -->
-        <div class="text-center" style="margin-top:50px;">
-            <p style="font-size:1.15rem; margin-bottom:20px;">Your small help today = one child stays in school tomorrow</p>
-            <a href="contact.html" class="btn btn-primary" style="font-size:1.2rem; padding:16px 50px;">Donate / Support Now</a>
-        </div>
-    </div>
-</section>
-
-<!-- Impact Photo (unchanged) -->
-<section class="video-section">
-    <div class="container">
-        <img src="images/photo1.jpg" alt="Children studying at Jaiti Foundation" class="impact-photo">
-    </div>
-</section>
-
-<!-- New: Short Testimonials / Guest Speak (inspired by Aapni Pathshala) -->
-<section style="padding:80px 0; background:#f8fafc;">
-    <div class="container">
-        <h2 class="text-center">What People Say About Jaiti</h2>
-        <div style="max-width:900px; margin:40px auto; font-style:italic; color:#4b5563;">
-            <p style="margin-bottom:25px;">“Jaiti is doing wonderful work — giving hope and real education to children who need it most. Keep going!”<br><strong>— [Name], Teacher / Local Supporter, Jaipur</strong></p>
-            
-            <p>“Seeing these smiling faces in class makes me believe change is possible. Proud to support Jaiti.”<br><strong>— [Name], Volunteer</strong></p>
-        </div>
-        <p class="text-center" style="margin-top:30px;">
-            <em>Have a story or feedback? Write to us!</em><br>
-            <a href="contact.html" class="btn btn-secondary" style="margin-top:15px;">Share Your Thoughts</a>
+        <p class="section-text">
+            In many underserved communities, children leave school not because they lack ability,
+            but because poverty limits opportunity. Jaiti Foundation ensures financial hardship
+            never decides a child’s future.
         </p>
     </div>
 </section>
 
-<!-- Transparency & Commitment – keep + enhance link to gallery -->
-<section class="transparency">
-    <div class="container">
-        <h2>Transparency & Commitment</h2>
-        <p>Jaiti Foundation operates with honesty and community involvement. All educational support is completely free. We are committed to real impact and transparent communication.</p>
-        <p style="margin-top:25px;">See the happy moments we create together → <a href="gallery.html" style="font-weight:600; color:var(--color-primary);">View Gallery</a></p>
+
+<!-- ================= IMPACT SECTION ================= -->
+<section class="section impact">
+    <div class="container text-center">
+        <h2>Our Impact</h2>
+        <p class="section-text">
+            We are currently supporting 60+ students and have impacted 150+ children since 2024.
+            Every child we support receives completely free academic guidance and school support.
+        </p>
     </div>
 </section>
 
-<!-- New: Our Supporters section (most important trust builder) -->
-<section id="supporters" style="padding:80px 0; background:#f1f5f9;">
-    <div class="container">
-        <h2 class="text-center">We Thank Our Supporters</h2>
-        <p class="text-center" style="margin-bottom:40px; color:#4b5563;">Every rupee you give goes directly to children’s books, fees and dreams. Here are the kind hearts who made it possible (updated regularly).</p>
-        
-        <div style="max-width:800px; margin:0 auto; font-size:0.95rem;">
-            <div style="padding:12px 0; border-bottom:1px solid #e5e7eb;">
-                <strong>[Your Name / Anonymous]</strong> – ₹5,000 – Udaipur/Jaipur
-            </div>
-            <div style="padding:12px 0; border-bottom:1px solid #e5e7eb;">
-                <strong>Rahul Sharma</strong> – ₹2,000 – Jaipur
-            </div>
-            <div style="padding:12px 0; border-bottom:1px solid #e5e7eb;">
-                <strong>Family of XYZ</strong> – ₹10,000 – 2025
-            </div>
-            <!-- Add 5–20 real entries manually here. Start small! -->
-        </div>
 
-        <div class="text-center" style="margin-top:50px;">
-            <p style="font-size:1.15rem; margin-bottom:20px;">Your name can be here next — help light up a child’s future today</p>
-            <a href="contact.html" class="btn btn-primary" style="font-size:1.3rem; padding:18px 60px; background:#dc2626;">Donate Securely Now</a>
-        </div>
-    </div>
-</section>
-
-<!-- CTA Section (enhanced) -->
-<section class="cta-section">
-    <div class="container">
-        <h2>Be a Part of the Change</h2>
-        <p>Your support can help us provide books, school fees, and mentorship to children who need it most.</p>
-        <a href="contact.html" class="btn btn-primary" style="font-size:1.2rem;">Join Us / Donate Today</a>
-    </div>
-</section>
-
-<!-- Footer (unchanged) -->
+<!-- ================= FOOTER ================= -->
 <footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h3>Jaiti Foundation</h3>
-                <p>Providing free education to underprivileged children in Jaipur, India.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="footer-social">
-                <h4>Connect With Us</h4>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/company/jaiti-foundation/" target="_blank">LinkedIn</a>
-                    <a href="https://www.instagram.com/jaitifoundation/" target="_blank">Instagram</a>
-                    <a href="https://www.facebook.com/profile.php?id=61584517470665" target="_blank">Facebook</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 Jaiti Foundation | Jaipur, India</p>
-        </div>
+    <div class="container text-center">
+        <p>© 2026 Jaiti Foundation | Jaipur, India</p>
     </div>
 </footer>
 
+
 <script src="script.js"></script>
+
 </body>
 </html>

@@ -75,17 +75,8 @@ document.addEventListener("DOMContentLoaded", function () {
             pageNavLinks.forEach(l => l.classList.remove('active'));
             link.classList.add('active');
 
-            if (page === 'index' || page === 'home') {
-                 // Special handling for home to load the initial content
-                 // This assumes the initial content is what should be on the home page.
-                 // A better approach might be to have a home.html and load it.
-                 // For now, we will just reload the window for home.
-                 window.location.hash = '';
-                 window.location.pathname = '/';
-            } else {
-                history.pushState({page: page}, null, `/${page}`);
-                loadPage(page);
-            }
+            history.pushState({page: page}, null, `/${page}`);
+            loadPage(page);
         });
     });
 
@@ -101,8 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
              pageNavLinks.forEach(l => {
                 l.classList.toggle('active', l.dataset.page === 'index');
             });
-            // Consider reloading the initial content of the home page
-            window.location.pathname = '/';
+            loadPage('home');
         }
     });
 
@@ -186,12 +176,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     // Initial load
-    const initialPage = window.location.pathname.substring(1) || 'home';
-    if (initialPage !== 'home') {
-        pageNavLinks.forEach(l => {
-            l.classList.toggle('active', l.dataset.page === initialPage);
-        });
+    const path = window.location.pathname;
+    const page = path.substring(path.lastIndexOf('/') + 1);
+    let initialPage = 'home';
+    if(page && page !== 'index.html' && page !== ''){
+        initialPage = page.replace('.html', '');
     }
+
+    pageNavLinks.forEach(l => {
+        if (l.dataset.page === initialPage) {
+            l.classList.add('active');
+        } else {
+            l.classList.remove('active');
+        }
+    });
     loadPage(initialPage);
 
 });

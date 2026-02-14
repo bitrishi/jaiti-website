@@ -32,11 +32,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const loadPage = async (page) => {
         try {
-            const response = await fetch(`${page}.html`);
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+
+            let content = '';
+            let pageToLoad = page;
+
+            if (pageToLoad === 'index') {
+                pageToLoad = 'home';
             }
-            const content = await response.text();
+            
+            const pageResponse = await fetch(`${pageToLoad}.html`);
+            if (!pageResponse.ok) {
+                throw new Error(`HTTP error! status: ${pageResponse.status}`);
+            }
+            content += await pageResponse.text();
+
+            // If home page, also load contact section
+            if (pageToLoad === 'home') {
+                const contactResponse = await fetch('contact.html');
+                if (contactResponse.ok) {
+                    content += await contactResponse.text();
+                }
+            }
+
             mainContent.innerHTML = content;
 
             // If gallery page is loaded, re-initialize lightbox

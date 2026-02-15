@@ -4,21 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | Jaiti Foundation</title>
+
 <link rel="stylesheet" href="styles.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+<!-- ================= NAVIGATION ================= -->
 <nav class="navbar">
 <div class="container nav-container">
+
 <a href="index.html" class="logo">
 <img src="images/logo.jpg">
 <span>Jaiti Foundation</span>
 </a>
 
 <button class="mobile-menu-btn">
-<span></span><span></span><span></span>
+<span></span>
+<span></span>
+<span></span>
 </button>
 
 <ul class="nav-links">
@@ -27,20 +33,61 @@
 <li><a href="gallery.html">Gallery</a></li>
 <li><a href="contact.html" class="active">Contact</a></li>
 </ul>
+
 </div>
 </nav>
 
-<section class="section text-center">
+<!-- ================= CONTACT SECTION ================= -->
+<section class="section">
 <div class="container">
-<h1>Contact Us</h1>
-<p>Email: jaitifoundation@gmail.com</p>
-<p>Jaipur, Rajasthan</p>
+
+<h1 class="text-center">Contact Us</h1>
+
+<div class="contact-grid">
+
+<!-- LEFT SIDE -->
+<div class="contact-info">
+<h2>Get in Touch</h2>
+
+<p>
+If you would like to support a child, volunteer, or collaborate with us,
+please reach out to us.
+</p>
+
+<div class="contact-details">
+<p><strong>Email:</strong><br> jaitifoundation@gmail.com</p>
+<p><strong>Location:</strong><br> Jaipur, Rajasthan, India</p>
+</div>
+
+</div>
+
+<!-- RIGHT SIDE -->
+<div class="contact-form-wrapper">
+<h2>Send a Message</h2>
+
+<form class="contact-form">
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="email" placeholder="Your Email" required>
+
+<textarea rows="5" placeholder="Your Message" required></textarea>
+
+<button type="submit" class="btn btn-full">Send Message</button>
+
+</form>
+
+</div>
+
+</div>
+
 </div>
 </section>
 
+<!-- ================= FOOTER ================= -->
 <footer class="footer">
 <div class="container text-center">
-<p>© 2026 Jaiti Foundation</p>
+<p>© 2026 Jaiti Foundation | Jaipur, India</p>
 </div>
 </footer>
 

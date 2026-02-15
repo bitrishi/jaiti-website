@@ -285,3 +285,51 @@ grid-template-columns:1fr;
 gap:40px;
 }
 }
+/* ================= ABOUT PAGE ================= */
+
+.about-content{
+max-width:800px;
+margin:auto;
+line-height:1.8;
+font-size:1.05rem;
+}
+
+.about-content h2{
+font-family:'Source Serif 4',serif;
+margin-bottom:20px;
+}
+
+.mission-box{
+background:var(--primary);
+color:white;
+}
+
+.mission-box h2{
+font-family:'Source Serif 4',serif;
+margin-bottom:20px;
+}
+
+.values-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:40px;
+margin-top:40px;
+}
+
+.value-card{
+background:var(--light);
+padding:30px;
+border-radius:10px;
+text-align:center;
+}
+
+.value-card h3{
+margin-bottom:15px;
+font-family:'Source Serif 4',serif;
+}
+
+@media(max-width:768px){
+.values-grid{
+grid-template-columns:1fr;
+}
+}

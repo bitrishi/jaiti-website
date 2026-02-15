@@ -1,21 +1,36 @@
+/* ==========================================
+   JAITI NGO - Clean JavaScript
+   ========================================== */
+
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Mobile menu toggle
+    /* ===============================
+       FORCE SCROLL TO TOP ON PAGE LOAD
+    =============================== */
+
+    window.scrollTo(0, 0);
+
+    /* ===============================
+       MOBILE NAVIGATION TOGGLE
+    =============================== */
+
     const mobileBtn = document.querySelector(".mobile-menu-btn");
     const navLinks = document.querySelector(".nav-links");
 
     if (mobileBtn && navLinks) {
         mobileBtn.addEventListener("click", function () {
             navLinks.classList.toggle("active");
-            const isExpanded = navLinks.classList.contains("active");
-            mobileBtn.setAttribute("aria-expanded", isExpanded);
         });
     }
 
-    // Hero slider
+    /* ===============================
+       HERO IMAGE SLIDER
+    =============================== */
+
     const slides = document.querySelectorAll(".slide");
-    if (slides.length > 1) {           // only run if more than 1 slide
-        let currentSlide = 0;
+    let currentSlide = 0;
+
+    if (slides.length > 0) {
 
         function showNextSlide() {
             slides[currentSlide].classList.remove("active");
@@ -23,185 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
             slides[currentSlide].classList.add("active");
         }
 
-        setInterval(showNextSlide, 5500); // slightly slower transition feels more calm
+        setInterval(showNextSlide, 5000);
     }
-
-    // Handle hero CTA click to navigate to contact page
-    const heroCTA = document.querySelector('.hero-content a.btn[data-page]');
-    if (heroCTA) {
-        heroCTA.addEventListener('click', (e) => {
-            e.preventDefault();
-            const contactNavLink = document.querySelector('.nav-links a[data-page="contact"]');
-            if (contactNavLink) {
-                contactNavLink.click();
-            }
-        });
-    }
-
-    // Dynamic page loading
-    const mainContent = document.getElementById('main-content');
-    const pageNavLinks = document.querySelectorAll('.nav-links a[data-page]');
-
-    const loadPage = async (page) => {
-        try {
-
-            let content = '';
-            let pageToLoad = page;
-
-            if (pageToLoad === 'index') {
-                pageToLoad = 'home';
-            }
-            
-            const pageResponse = await fetch(`${pageToLoad}.html`);
-            if (!pageResponse.ok) {
-                throw new Error(`HTTP error! status: ${pageResponse.status}`);
-            }
-            content += await pageResponse.text();
-
-            // If home page, also load contact section
-            if (pageToLoad === 'home') {
-                const contactResponse = await fetch('contact.html');
-                if (contactResponse.ok) {
-                    content += await contactResponse.text();
-                }
-            }
-
-            mainContent.innerHTML = content;
-
-            // If gallery page is loaded, re-initialize lightbox
-            if (page === 'gallery') {
-                initializeGallery();
-            }
-        } catch (error) {
-            console.error('Error loading page:', error);
-            mainContent.innerHTML = '<p style="text-align: center; padding: 50px;">Sorry, we couldn’t load this page. Please try again.</p>';
-        }
-    };
-
-    pageNavLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const page = link.dataset.page;
-
-            // Update active class on navigation
-            pageNavLinks.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
-
-            history.pushState({page: page}, null, `/${page}`);
-            loadPage(page);
-        });
-    });
-
-    // Handle back/forward browser navigation
-    window.addEventListener('popstate', function(e) {
-        if (e.state && e.state.page) {
-            pageNavLinks.forEach(l => {
-                l.classList.toggle('active', l.dataset.page === e.state.page);
-            });
-            loadPage(e.state.page);
-        } else {
-             // This handles the case where the initial state is popped, e.g., going back to the very first page
-             pageNavLinks.forEach(l => {
-                l.classList.toggle('active', l.dataset.page === 'index');
-            });
-            loadPage('home');
-        }
-    });
-
-
-    function initializeGallery() {
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        const lightbox = document.getElementById('lightbox');
-
-        if (galleryItems.length > 0 && lightbox) {
-            const lightboxImage = lightbox.querySelector('.lightbox-image');
-            const lightboxClose = lightbox.querySelector('.lightbox-close');
-            const lightboxPrev = lightbox.querySelector('.lightbox-prev');
-            const lightboxNext = lightbox.querySelector('.lightbox-next');
-            const images = [];
-            let currentIndex = 0;
-
-            galleryItems.forEach((item, index) => {
-                const img = item.querySelector('img');
-                if (img) {
-                    images.push(img);
-                    item.addEventListener('click', () => {
-                        currentIndex = index;
-                        openLightbox();
-                    });
-                }
-            });
-
-            function openLightbox() {
-                if (images[currentIndex]) {
-                    lightboxImage.src = images[currentIndex].src;
-                    lightboxImage.alt = images[currentIndex].alt;
-                    lightbox.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                }
-            }
-
-            function closeLightbox() {
-                lightbox.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-
-            function showPrevImage() {
-                currentIndex = (currentIndex - 1 + images.length) % images.length;
-                if (images[currentIndex]) {
-                    lightboxImage.src = images[currentIndex].src;
-                    lightboxImage.alt = images[currentIndex].alt;
-                }
-            }
-
-            function showNextImage() {
-                currentIndex = (currentIndex + 1) % images.length;
-                if (images[currentIndex]) {
-                    lightboxImage.src = images[currentIndex].src;
-                    lightboxImage.alt = images[currentIndex].alt;
-                }
-            }
-
-            lightboxClose.addEventListener('click', closeLightbox);
-            lightboxPrev.addEventListener('click', showPrevImage);
-            lightboxNext.addEventListener('click', showNextImage);
-
-            lightbox.addEventListener('click', function(e) {
-                if (e.target === lightbox) {
-                    closeLightbox();
-                }
-            });
-
-            document.addEventListener('keydown', function(e) {
-                if (!lightbox.classList.contains('active')) return;
-                if (e.key === 'Escape') {
-                    closeLightbox();
-                }
-                if (e.key === 'ArrowLeft') {
-                    showPrevImage();
-                }
-                if (e.key === 'ArrowRight') {
-                    showNextImage();
-                }
-            });
-        }
-    }
-    
-    // Initial load
-    const path = window.location.pathname;
-    const page = path.substring(path.lastIndexOf('/') + 1);
-    let initialPage = 'home';
-    if(page && page !== 'index.html' && page !== ''){
-        initialPage = page.replace('.html', '');
-    }
-
-    pageNavLinks.forEach(l => {
-        if (l.dataset.page === initialPage) {
-            l.classList.add('active');
-        } else {
-            l.classList.remove('active');
-        }
-    });
-    loadPage(initialPage);
 
 });

@@ -1,32 +1,16 @@
-/* ==========================================
-   JAITI NGO - Clean JavaScript
-   ========================================== */
-
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* ===============================
-       FORCE SCROLL TO TOP ON PAGE LOAD
-    =============================== */
-
-    window.scrollTo(0, 0);
-
-    /* ===============================
-       MOBILE NAVIGATION TOGGLE
-    =============================== */
-
+    // MOBILE MENU
     const mobileBtn = document.querySelector(".mobile-menu-btn");
     const navLinks = document.querySelector(".nav-links");
 
-    if (mobileBtn && navLinks) {
+    if (mobileBtn) {
         mobileBtn.addEventListener("click", function () {
-            navLinks.classList.toggle("active");
+            navLinks.classList.toggle("show");
         });
     }
 
-    /* ===============================
-       HERO IMAGE SLIDER
-    =============================== */
-
+    // HERO SLIDER
     const slides = document.querySelectorAll(".slide");
     let currentSlide = 0;
 

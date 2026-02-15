@@ -216,110 +216,63 @@ body {
     }
 }
 /* ==========================================
-   GALLERY PAGE
-   ========================================== */
+   GALLERY PAGE - PROFESSIONAL FIX
+========================================== */
+
 .gallery-section {
-    padding: 80px 0;
+    padding: 100px 0;
 }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
 }
 
+/* Gallery Card */
 .gallery-item {
     position: relative;
-    aspect-ratio: 4/3;
+    width: 100%;
+    height: 260px;              /* Fixed height */
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
     background: #f3f4f6;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Image */
 .gallery-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: all 0.3s ease;
+    object-fit: cover;          /* THIS fixes large image issue */
+    transition: transform 0.4s ease;
+}
+
+/* Hover Effect */
+.gallery-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
 
 .gallery-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
-/* Lightbox */
-.lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.9);
-    z-index: 2000;
-    align-items: center;
-    justify-content: center;
-}
-
-.lightbox.active {
-    display: flex;
-}
-
-.lightbox-image {
-    max-width: 90%;
-    max-height: 90vh;
-    object-fit: contain;
-}
-
-.lightbox-close,
-.lightbox-prev,
-.lightbox-next {
-    position: absolute;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    padding: 15px;
-    transition: all 0.3s ease;
-}
-
-.lightbox-close:hover,
-.lightbox-prev:hover,
-.lightbox-next:hover {
-    color: #f59e0b;
-}
-
-.lightbox-close {
-    top: 20px;
-    right: 20px;
-}
-
-.lightbox-prev {
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.lightbox-next {
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
+/* Mobile */
 @media (max-width: 768px) {
-    .gallery-grid {
-        grid-template-columns: 1fr;
+    .gallery-item {
+        height: 220px;
     }
 }
 
 @media (max-width: 480px) {
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+    .gallery-item {
+        height: 180px;
     }
 }
+
 
 /* ==========================================
    CONTACT PAGE

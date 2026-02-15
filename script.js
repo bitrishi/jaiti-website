@@ -26,6 +26,18 @@ document.addEventListener("DOMContentLoaded", function () {
         setInterval(showNextSlide, 5500); // slightly slower transition feels more calm
     }
 
+    // Handle hero CTA click to navigate to contact page
+    const heroCTA = document.querySelector('.hero-content a.btn[data-page]');
+    if (heroCTA) {
+        heroCTA.addEventListener('click', (e) => {
+            e.preventDefault();
+            const contactNavLink = document.querySelector('.nav-links a[data-page="contact"]');
+            if (contactNavLink) {
+                contactNavLink.click();
+            }
+        });
+    }
+
     // Dynamic page loading
     const mainContent = document.getElementById('main-content');
     const pageNavLinks = document.querySelectorAll('.nav-links a[data-page]');

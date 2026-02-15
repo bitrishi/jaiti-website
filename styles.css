@@ -6,45 +6,28 @@
     --text: #1f2937;
 }
 
-/* ================= RESET ================= */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html, body {
-    overflow-x: hidden;
-}
-
 body {
     font-family: 'Source Sans 3', sans-serif;
     color: var(--text);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* ================= CONTAINER ================= */
+/* CONTAINER */
 .container {
     width: 90%;
     max-width: 1100px;
     margin: auto;
 }
 
-.section {
-    padding: 100px 0;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.section-text {
-    max-width: 750px;
-    margin: 20px auto 0;
-    font-size: 1.1rem;
-}
-
-/* ================= NAVBAR ================= */
+/* NAVBAR */
 .navbar {
     position: fixed;
     width: 100%;
@@ -65,7 +48,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-weight: bold;
+    font-weight: 700;
     color: var(--primary);
     text-decoration: none;
 }
@@ -90,14 +73,13 @@ body {
     color: var(--primary);
 }
 
-/* ================= MOBILE MENU ================= */
+/* MOBILE MENU */
 .mobile-menu-btn {
     display: none;
     flex-direction: column;
     gap: 5px;
-    border: none;
     background: none;
-    cursor: pointer;
+    border: none;
 }
 
 .mobile-menu-btn span {
@@ -106,11 +88,11 @@ body {
     background: var(--text);
 }
 
-/* ================= HERO SLIDER ================= */
+/* HERO */
 .hero-slider {
     position: relative;
     height: 100vh;
-    margin-top: 70px; /* space for fixed navbar */
+    margin-top: 70px;
 }
 
 .slide {
@@ -120,7 +102,7 @@ body {
     background-size: cover;
     background-position: center;
     opacity: 0;
-    transition: opacity 1.5s ease-in-out;
+    transition: opacity 1.5s ease;
 }
 
 .slide.active {
@@ -132,21 +114,14 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.6);
-    top: 0;
-    left: 0;
-    z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
     text-align: center;
-    color: #fff;
-    max-width: 800px;
-    margin: auto;
-    padding-top: 25vh;
-    padding-left: 20px;
-    padding-right: 20px;
+    color: white;
+    padding-top: 30vh;
 }
 
 .hero-content h1 {
@@ -160,13 +135,12 @@ body {
     margin-bottom: 30px;
 }
 
-/* ================= BUTTON ================= */
 .btn {
     padding: 14px 32px;
     background: var(--primary);
     color: white;
-    text-decoration: none;
     border-radius: 8px;
+    text-decoration: none;
     font-weight: 600;
     transition: 0.3s ease;
 }
@@ -176,248 +150,56 @@ body {
     transform: translateY(-3px);
 }
 
-/* ================= IMPACT SECTION ================= */
+/* SECTION */
+.section {
+    padding: 100px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-text {
+    max-width: 700px;
+    margin: 20px auto 0;
+}
+
+/* IMPACT */
 .impact {
     background: var(--light);
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 .footer {
     background: var(--dark);
     color: white;
     padding: 50px 0;
+    text-align: center;
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        background: white;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 200px;
-        padding: 20px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    }
-
-    .nav-links.show {
-        display: flex;
-    }
-
-    .mobile-menu-btn {
-        display: flex;
-    }
+/* GALLERY FIX */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
-/* Image */
+.gallery-item {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
 .gallery-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;          /* THIS fixes large image issue */
-    transition: transform 0.4s ease;
+    object-fit: cover;
 }
 
-/* Hover Effect */
-.gallery-item:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+/* RESPONSIVE */
+@media(max-width:768px){
+    .nav-links { display:none; }
+    .mobile-menu-btn { display:flex; }
+    .gallery-grid { grid-template-columns:1fr; }
+    .hero-content h1 { font-size:2rem; }
 }
-
-.gallery-item:hover img {
-    transform: scale(1.08);
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .gallery-item {
-        height: 220px;
-    }
-}
-
-@media (max-width: 480px) {
-    .gallery-item {
-        height: 180px;
-    }
-}
-
-
-/* ==========================================
-   CONTACT PAGE
-   ========================================== */
-
-.contact-section {
-    padding: 80px 0;
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: start;
-}
-
-.contact-info h2, .contact-form-wrapper h2 {
-    font-family: 'Source Serif 4', serif;
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.contact-info p {
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-    color: #4b5563;
-}
-
-.contact-details {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.contact-item {
-    display: flex;
-    align-items: start;
-    gap: 20px;
-}
-
-.contact-icon {
-    font-size: 1.5rem;
-}
-
-.contact-text h3 {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-}
-
-.contact-text p, .contact-text a {
-    color: #4b5563;
-    text-decoration: none;
-}
-.contact-text a:hover {
-    text-decoration: underline;
-    color: var(--primary);
-}
-
-.contact-social {
-    margin-top: 40px;
-}
-
-.contact-social h3 {
-    margin-bottom: 20px;
-}
-
-.social-links-branded {
-    display: flex;
-    gap: 15px;
-}
-
-.social-link-branded {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 15px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.social-link-branded svg {
-    width: 24px;
-    height: 24px;
-    fill: white;
-}
-
-.social-link-linkedin { background-color: #0077B5; color: white; }
-.social-link-instagram { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); color: white; }
-
-.social-link-branded:hover {
-    opacity: 0.9;
-    transform: translateY(-3px);
-}
-
-
-/* Contact Form */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-    font-weight: 600;
-    margin-bottom: 8px;
-    font-size: 0.9rem;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
-}
-
-.btn-full {
-    width: 100%;
-}
-
-/* Map Section */
-.map-section {
-    padding-bottom: 80px;
-}
-
-.map-section h2 {
-    text-align: center;
-    font-family: 'Source Serif 4', serif;
-    font-size: 2rem;
-    margin-bottom: 30px;
-}
-
-.map-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.map-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-
-/* Responsive for Contact Page */
-@media (max-width: 992px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-}
-
